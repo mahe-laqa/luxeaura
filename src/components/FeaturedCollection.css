@@ -1,0 +1,194 @@
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.premium-collection-section {
+    padding: 6rem 0;
+    /* Soft animated background */
+    background: linear-gradient(-45deg, #fafafa, #ffffff, #f7f5f2, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft floating particles effect */
+.premium-collection-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(var(--color-accent) 0.5px, transparent 0.5px);
+    background-size: 30px 30px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.premium-collection-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0;
+    /* Hidden initially for scroll animation */
+}
+
+.premium-collection-header.animate-in {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+.premium-collection-title {
+    font-size: 2.75rem;
+    font-family: var(--font-serif);
+    /* Slight gradient text */
+    background: linear-gradient(90deg, #111111, #555555);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.premium-collection-subtitle {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    opacity: 0;
+    /* Hidden initially for scroll animation */
+}
+
+.premium-grid.animate-in {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+.premium-card {
+    background: #ffffff;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.premium-card:hover {
+    /* Soft hover animation & Slight lift effect on hover */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.premium-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+}
+
+.premium-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.premium-card:hover .premium-image {
+    transform: scale(1.04);
+    /* Soft, extremely subtle zoom */
+}
+
+.premium-info {
+    padding: 1.5rem;
+    text-align: center;
+    background: transparent;
+}
+
+.premium-category {
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.premium-name {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: color var(--transition-fast);
+}
+
+.premium-name:hover {
+    color: var(--color-accent);
+}
+
+.premium-price {
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* Subtle line to emphasize premium */
+.premium-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width 0.4s ease;
+}
+
+.premium-card:hover::after {
+    width: 40px;
+}
+
+@media (max-width: 768px) {
+    .premium-collection-title {
+        font-size: 2rem;
+    }
+
+    .premium-collection-section {
+        padding: 4rem 0;
+    }
+
+    .premium-grid {
+        gap: 1.5rem;
+    }
+}

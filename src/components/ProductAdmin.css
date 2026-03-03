@@ -1,0 +1,160 @@
+.admin-fab {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.admin-fab:hover {
+    transform: translateY(-5px);
+}
+
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.admin-modal {
+    background-color: #1f1f1f;
+    /* Dark grey instead of pure black */
+    color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.admin-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.admin-modal-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #ffffff;
+    /* Explicitly white title */
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    /* Ensure close icon is white */
+}
+
+.close-btn:hover {
+    color: #e0e0e0;
+}
+
+.admin-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    /* Label text color MUST be white */
+}
+
+.admin-form input,
+.admin-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Explicit Category Dropdown Styles */
+.admin-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #ffffff;
+    /* 1. Default background is WHITE */
+    color: #ffffff;
+    /* 3. Selected text becomes WHITE */
+}
+
+/* Fallback/Placeholder Text Behavior (Before Selection) */
+.admin-form select:invalid {
+    color: #000000;
+    /* 1. Default Placeholder Text is BLACK */
+}
+
+/* Options List Dropdown */
+.admin-form select option {
+    background-color: #ffffff;
+    /* 2. Options background remains WHITE */
+    color: #000000;
+    /* 2. Options text remains BLACK */
+}
+
+.admin-form input::placeholder,
+.admin-form textarea::placeholder {
+    color: #555555;
+}
+
+.admin-form input:focus,
+.admin-form textarea:focus,
+.admin-form select:focus {
+    outline: none;
+    border-color: #888;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #ffffff;
+    /* Button background MUST be white */
+    color: #000000;
+    /* Button text MUST be black */
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #e0e0e0;
+    /* Light grey hover effect */
+}

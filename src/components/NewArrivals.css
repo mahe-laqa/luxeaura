@@ -1,0 +1,89 @@
+.new-arrivals {
+    background-color: var(--color-white);
+}
+
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section-header-flex .section-title {
+    margin: 0;
+}
+
+.new-arrivals-carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 2rem;
+}
+
+.new-arrivals-swiper {
+    width: 100%;
+}
+
+/* Force linear transition for continuous slide effect */
+.new-arrivals-swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.scroll-product-card {
+    /* Set Swiper default height/sizing */
+    height: auto;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+    border-radius: 0;
+}
+
+/* Matching Product Card details for consistency across sections */
+.new-arrivals .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 0;
+    background-color: var(--color-background);
+    z-index: 10;
+    position: relative;
+}
+
+.new-arrivals .product-category {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.new-arrivals .product-name h3 {
+    margin: 0;
+}
+
+.new-arrivals .product-name a {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.new-arrivals .product-name a:hover {
+    color: var(--color-accent);
+}
+
+.new-arrivals .product-price {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+}

@@ -1,0 +1,333 @@
+@keyframes softGlowBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.trending-collections-section {
+    padding: 6rem 0;
+    /* Very soft floating particles/glow effect */
+    background: linear-gradient(120deg, #ffffff 0%, #f9f7f5 50%, #ffffff 100%);
+    background-size: 200% 200%;
+    animation: softGlowBG 20s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.trending-collections-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(196, 164, 124, 0.03) 0%, transparent 50%);
+    animation: softGlowBG 15s linear infinite;
+    pointer-events: none;
+}
+
+.tc-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+}
+
+.tc-header.animate-in {
+    animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.tc-title {
+    font-size: 2.5rem;
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.tc-subtitle {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Filter Tabs */
+.tc-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tc-filter-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.tc-filter-btn:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    color: var(--color-primary);
+}
+
+.tc-filter-btn.active {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
+
+/* CSS Grid for Cards */
+.tc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    perspective: 1000px;
+    /* Required for 3D flip effect */
+    opacity: 0;
+}
+
+.tc-grid.animate-in {
+    animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+/* Smooth filtering transition classes */
+.tc-grid.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tc-grid.fade-in {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* 3D Flip Card Container */
+.tc-card-wrapper {
+    background: transparent;
+    border-radius: 4px;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    /* Soft shadow on rest */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Soft lift and enhanced shadow on hover */
+.tc-card-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Required for 3D depth */
+.tc-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    /* Professional flip speed */
+    transform-style: preserve-3d;
+    border-radius: 4px;
+}
+
+/* Trigger flip on hover */
+.tc-card-wrapper:hover .tc-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Card Face Styling */
+.tc-card-front,
+.tc-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* FRONT SIDE */
+.tc-card-front {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.tc-image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.tc-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient overlay on front to make text readable */
+.tc-front-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.tc-front-content {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    text-align: left;
+    z-index: 2;
+}
+
+.tc-badge {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.tc-collection-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--color-secondary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* BACK SIDE */
+.tc-card-back {
+    color: var(--color-secondary);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tc-card-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.tc-card-back::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    pointer-events: none;
+    margin: 15px;
+    /* Applies the decorative border inside */
+}
+
+.tc-back-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.tc-description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.tc-shop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tc-shop-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+    .trending-collections-section {
+        padding: 4rem 0;
+    }
+
+    .tc-title {
+        font-size: 2rem;
+    }
+
+    .tc-grid {
+        gap: 1.5rem;
+    }
+
+    .tc-filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+    }
+}

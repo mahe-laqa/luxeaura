@@ -1,0 +1,146 @@
+.favorites-page {
+    padding-bottom: 4rem;
+}
+
+.empty-favorites {
+    padding: 6rem 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.empty-favorites h2 {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.empty-favorites p {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+@media (min-width: 576px) {
+    .favorites-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .favorites-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .favorites-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.favorite-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.favorite-image-link {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-surface-gray);
+    margin-bottom: 1rem;
+}
+
+.favorite-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.favorite-card:hover .favorite-image-link img {
+    transform: scale(1.05);
+}
+
+.favorite-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.favorite-category {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.favorite-name {
+    margin: 0;
+}
+
+.favorite-name a {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.favorite-name a:hover {
+    color: var(--color-accent);
+}
+
+.favorite-price {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.favorite-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.favorite-actions .add-to-cart-btn {
+    width: 100%;
+    justify-content: center;
+    border-radius: 0;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.favorite-actions .remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.favorite-actions .remove-btn:hover {
+    color: var(--color-accent);
+}

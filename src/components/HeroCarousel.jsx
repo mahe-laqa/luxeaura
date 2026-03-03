@@ -1,0 +1,74 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { ArrowRight } from 'lucide-react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import './HeroCarousel.css';
+
+// Local, reliable image assets to avoid broken Unsplash links
+const slides = [
+    {
+        id: 1,
+        image: '/hero_modest.png',
+        title: 'THE NEW ELEGANCE',
+        subtitle: 'Spring / Summer 2026 Collection',
+        cta: 'Discover More'
+    },
+    {
+        id: 2,
+        image: '/modest_3.png',
+        title: 'LUXURY REDEFINED',
+        subtitle: 'Timeless pieces for the modern wardrobe',
+        cta: 'Shop Collection'
+    },
+    {
+        id: 3,
+        image: '/modest_4.png',
+        title: 'SIGNATURE SCENTS',
+        subtitle: 'Elevate your daily ritual',
+        cta: 'Explore Beauty'
+    }
+];
+
+const HeroCarousel = () => {
+    return (
+        <div className="hero-section">
+            <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                speed={800}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                loop={true}
+                className="hero-swiper"
+            >
+                {slides.map((slide) => (
+                    <SwiperSlide key={slide.id}>
+                        <div className="hero-slide">
+                            <div
+                                className="hero-bg-image"
+                                style={{ backgroundImage: `url(${slide.image})` }}
+                                aria-hidden="true"
+                            />
+                            <div className="hero-overlay"></div>
+                            <div className="hero-content container">
+                                <span className="hero-subtitle">{slide.subtitle}</span>
+                                <h2 className="hero-title">{slide.title}</h2>
+                                <Link to="/shop" className="btn btn-primary hero-btn">
+                                    {slide.cta} <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+                                </Link>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
+};
+
+export default HeroCarousel;

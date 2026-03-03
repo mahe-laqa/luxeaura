@@ -1,0 +1,129 @@
+.brand-logos-section {
+    padding: 3rem 0;
+    background-color: var(--color-surface-light);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.brand-logos-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Gradient fades on edges to make the loop look continuous and professional */
+.brand-logos-container::before,
+.brand-logos-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.brand-logos-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-surface-light) 0%, rgba(249, 249, 249, 0) 100%);
+}
+
+.brand-logos-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-surface-light) 0%, rgba(249, 249, 249, 0) 100%);
+}
+
+.brand-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 6rem;
+    /* Spacing between each brand logo */
+    animation: marquee 35s linear infinite;
+    padding: 0 2.5rem;
+}
+
+/* Pause animation smoothly on hover */
+.brand-track:hover {
+    animation-play-state: paused;
+}
+
+/* Image Logo Styling */
+.brand-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    /* Increased height for clearer logos */
+    min-width: 150px;
+    /* Increased width */
+    opacity: 0.85;
+    /* Higher base opacity for clarity */
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    filter: none;
+    /* Removed grayscale to keep original vivid brand colors (like Red Tag and H&M) */
+}
+
+.brand-logo-item:hover {
+    opacity: 1;
+    /* Highlight on hover */
+    transform: scale(1.05);
+    /* Slight lift */
+}
+
+.brand-logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    max-width: 250px;
+    /* Prevent overly wide logos but allow them to be large */
+}
+
+/* Fallback Typography if image fails */
+.brand-logo-fallback {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* 
+ * The track width is dynamic. By translating exactly half of its content (-50%),
+ * and because the content is duplicated twice exactly, the loop is perfectly seamless.
+ */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .brand-track {
+        gap: 3rem;
+        animation-duration: 25s;
+        /* Slightly faster on mobile due to smaller screen */
+    }
+
+    .brand-logo-item {
+        height: 40px;
+        /* Smaller logos on mobile but still readable */
+        min-width: 100px;
+    }
+
+    .brand-logos-container::before,
+    .brand-logos-container::after {
+        width: 60px;
+    }
+}

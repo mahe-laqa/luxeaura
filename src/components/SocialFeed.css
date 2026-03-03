@@ -1,0 +1,54 @@
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .social-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.social-item {
+    position: relative;
+    display: block;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.social-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.social-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--color-white);
+}
+
+.social-item:hover img {
+    transform: scale(1.1);
+}
+
+.social-item:hover .social-overlay {
+    opacity: 1;
+}
+
+.social-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}

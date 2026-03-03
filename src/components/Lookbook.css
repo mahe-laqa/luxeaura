@@ -1,0 +1,106 @@
+.lookbook-section {
+    background-color: var(--color-background);
+}
+
+.lookbook-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.lookbook-main {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lookbook-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hotspot {
+    position: absolute;
+    z-index: 10;
+}
+
+.hotspot-dot {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.hotspot-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+
+.hotspot-dot:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.hotspot-card {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    gap: 15px;
+    width: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.hotspot:hover .hotspot-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px);
+    pointer-events: auto;
+}
+
+.hotspot-card img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.hc-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hc-info h4 {
+    font-size: 0.875rem;
+    margin: 0 0 5px 0;
+    font-family: var(--font-primary);
+}
+
+.hc-info p {
+    font-size: 0.875rem;
+    margin: 0;
+    color: var(--color-text-light);
+}
