@@ -14,21 +14,21 @@ import './HeroCarousel.css';
 const slides = [
     {
         id: 1,
-        image: '/hero_modest.png',
+        image: '/new_hero_1.png',
         title: 'THE NEW ELEGANCE',
         subtitle: 'Spring / Summer 2026 Collection',
         cta: 'Discover More'
     },
     {
         id: 2,
-        image: '/modest_3.png',
+        image: '/new_hero_2.png',
         title: 'LUXURY REDEFINED',
         subtitle: 'Timeless pieces for the modern wardrobe',
         cta: 'Shop Collection'
     },
     {
         id: 3,
-        image: '/modest_4.png',
+        image: '/new_hero_3_perfume.png',
         title: 'SIGNATURE SCENTS',
         subtitle: 'Elevate your daily ritual',
         cta: 'Explore Beauty'
