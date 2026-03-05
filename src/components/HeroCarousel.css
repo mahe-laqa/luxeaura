@@ -1,7 +1,9 @@
 .hero-section {
     width: 100%;
-    height: 90vh;
-    min-height: 600px;
+    aspect-ratio: 21 / 9;
+    /* Cinematic ratio for ultra-wide to minimize cropping */
+    min-height: 500px;
+    max-height: 85vh;
     position: relative;
     overflow: hidden;
 }
@@ -26,18 +28,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--color-surface-gray);
+    background-size: cover;
+    background-position: center center;
     transition: transform 6s ease-out;
     /* Slow zoom effect on active slide */
-}
-
-@media (min-width: 1024px) {
-    .hero-bg-image {
-        background-position: right center;
-    }
 }
 
 /* Subtle zoom effect for active slide */
@@ -126,9 +120,21 @@
     opacity: 1;
 }
 
+@media (max-width: 1024px) {
+    .hero-section {
+        aspect-ratio: 16 / 9;
+        min-height: 400px;
+        max-height: 80vh;
+        height: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-section {
-        height: 70vh;
+        aspect-ratio: 4 / 5;
+        min-height: 500px;
+        max-height: 80vh;
+        height: auto;
     }
 
     .hero-overlay {
