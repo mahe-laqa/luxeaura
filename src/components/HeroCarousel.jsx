@@ -50,10 +50,10 @@ const HeroCarousel = () => {
                 {slides.map((slide) => (
                     <SwiperSlide key={slide.id}>
                         <div className="hero-slide">
-                            <div
+                            <img
+                                src={slide.image}
+                                alt={slide.title}
                                 className="hero-bg-image"
-                                style={{ backgroundImage: `url(${slide.image})` }}
-                                aria-hidden="true"
                             />
                             <div className="hero-overlay"></div>
                             <div className="hero-content container">

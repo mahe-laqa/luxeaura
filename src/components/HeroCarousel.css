@@ -1,37 +1,29 @@
 .hero-section {
     width: 100%;
-    aspect-ratio: 21 / 9;
-    /* Cinematic ratio for ultra-wide to minimize cropping */
-    min-height: 500px;
-    max-height: 85vh;
     position: relative;
     overflow: hidden;
+    background-color: var(--color-surface-gray);
 }
 
 .hero-swiper {
     width: 100%;
-    height: 100%;
+    /* Swiper will automatically size to fit its slides */
 }
 
 .hero-slide {
     position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    display: block;
+    /* Important: removes flex so height is strictly driven by the image */
 }
 
 .hero-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Fallback if any constraints are added later */
     transition: transform 6s ease-out;
-    /* Slow zoom effect on active slide */
 }
 
 /* Subtle zoom effect for active slide */
@@ -52,20 +44,24 @@
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     z-index: 2;
     color: var(--color-secondary);
     max-width: 600px;
     padding-right: 20px;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(calc(-50% + 30px));
     transition: opacity 1s ease, transform 1s ease;
     transition-delay: 0.5s;
 }
 
 .swiper-slide-active .hero-content {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-50%);
 }
 
 .hero-subtitle {
@@ -121,22 +117,10 @@
 }
 
 @media (max-width: 1024px) {
-    .hero-section {
-        aspect-ratio: 16 / 9;
-        min-height: 400px;
-        max-height: 80vh;
-        height: auto;
-    }
+    /* No longer enforcing fixed container sizing so img sets proportions completely */
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        aspect-ratio: 4 / 5;
-        min-height: 500px;
-        max-height: 80vh;
-        height: auto;
-    }
-
     .hero-overlay {
         background: linear-gradient(to bottom,
                 rgba(0, 0, 0, 0.2) 0%,
@@ -144,13 +128,20 @@
     }
 
     .hero-slide {
-        align-items: flex-end;
-        padding-bottom: 15%;
+        /* Clear any previous overrides */
+        padding-bottom: 0;
     }
 
     .hero-content {
         text-align: center;
         margin: 0 auto;
         padding-right: 0;
+        /* Re-ensure positioning stays centered regardless of size */
+        top: 50%;
+        transform: translateY(calc(-50% + 30px));
+    }
+
+    .swiper-slide-active .hero-content {
+        transform: translateY(-50%);
     }
 }
