@@ -53,15 +53,19 @@
 .hero-content {
     position: absolute;
     top: 50%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    left: 10%;
+    /* Move to the left side */
+    right: auto;
+    /* Remove right auto centering */
+    margin: 0;
+    /* Remove auto centering margin */
     z-index: 2;
     color: var(--color-secondary);
     max-width: 600px;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    text-align: left;
+    /* Change text alignment to left */
+    padding-left: 0;
+    padding-right: 0;
     opacity: 0;
     transform: translateY(calc(-50% + 30px));
     transition: opacity 1s ease, transform 1s ease;
@@ -156,15 +160,15 @@
     }
 
     .hero-content {
-        text-align: center;
-        margin: 0 auto;
+        text-align: left;
+        /* Keep left alignment on mobile too */
+        margin: 0;
         padding-right: 20px;
         padding-left: 20px;
         max-width: 90%;
+        left: 5%;
         /* Slight padding from screen edge */
-        left: 0;
-        right: 0;
-        /* Re-ensure positioning stays centered regardless of size */
+        right: auto;
         top: 60%;
         /* Push text slightly lower on mobile so heads are clearer */
         transform: translateY(calc(-50% + 30px));

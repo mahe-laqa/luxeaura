@@ -28,10 +28,10 @@ const slides = [
     },
     {
         id: 3,
-        image: '/new_hero_3_perfume.png',
-        title: 'SIGNATURE SCENTS',
-        subtitle: 'Elevate your daily ritual',
-        cta: 'Explore Beauty'
+        image: '/new_hero_3_man.png',
+        title: 'MODERN MENSWEAR',
+        subtitle: 'Effortless style for every occasion',
+        cta: 'Shop Men'
     }
 ];
 
