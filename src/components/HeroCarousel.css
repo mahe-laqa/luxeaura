@@ -19,12 +19,18 @@
 
 .hero-bg-image {
     width: 100%;
-    height: 85vh;
-    min-height: 500px;
+    height: 45vw;
+    /* Make height relative to width to maintain roughly the same aspect ratio */
+    min-height: 600px;
+    /* Don't let it get too short */
+    max-height: 90vh;
+    /* Don't let it take over the whole screen vertically on very large displays */
     display: block;
     object-fit: cover;
-    object-position: top center;
+    object-position: center 20%;
+    /* Focus slightly above center to prioritize faces/upper bodies */
     transition: transform 6s ease-out;
+    background-color: var(--color-surface-gray);
 }
 
 /* Subtle zoom effect for active slide */
@@ -121,8 +127,12 @@
 
 @media (max-width: 768px) {
     .hero-bg-image {
-        height: 75vh;
-        min-height: 400px;
+        height: 120vw;
+        /* Taller relative height on mobile to accommodate portrait orientation better */
+        min-height: 550px;
+        object-fit: cover;
+        object-position: center top;
+        /* Center top for mobile */
     }
 
     .hero-title {
