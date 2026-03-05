@@ -26,10 +26,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-surface-gray);
     transition: transform 6s ease-out;
     /* Slow zoom effect on active slide */
+}
+
+@media (min-width: 1024px) {
+    .hero-bg-image {
+        background-position: right center;
+    }
 }
 
 /* Subtle zoom effect for active slide */

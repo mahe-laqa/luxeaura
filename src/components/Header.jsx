@@ -53,7 +53,7 @@ const Header = () => {
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
 
-                    <Link to="/" className="brand-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Link to="/" className="brand-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={() => setMobileMenuOpen(false)}>
                         <span className="logo-text">LUXE<span className="logo-accent">AURA</span></span>
                         {location.pathname.includes('/category/') && (
                             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.8, marginTop: '4px' }}>
@@ -72,15 +72,21 @@ const Header = () => {
                         )}
                     </Link>
 
+                    {/* Mobile Menu Overlay */}
+                    {mobileMenuOpen && <div className="mobile-menu-overlay" onClick={() => setMobileMenuOpen(false)}></div>}
+
                     <nav className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
-                        <Link to="/" className="nav-link">Home</Link>
-                        <Link to="/shop" className="nav-link" style={{ fontWeight: 'bold' }}>Shop All</Link>
-                        <Link to="/category/women" className="nav-link">Women</Link>
-                        <Link to="/category/men" className="nav-link">Men</Link>
-                        <Link to="/category/beauty" className="nav-link">Beauty</Link>
-                        <Link to="/category/accessories" className="nav-link">Accessories</Link>
-                        <Link to="/contact" className="nav-link">Contact</Link>
-                        <Link to="/sale" className="nav-link sale-link">Sale</Link>
+                        <button className="mobile-close-btn" onClick={() => setMobileMenuOpen(false)}>
+                            <X size={24} />
+                        </button>
+                        <Link to="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                        <Link to="/shop" className="nav-link" style={{ fontWeight: 'bold' }} onClick={() => setMobileMenuOpen(false)}>Shop All</Link>
+                        <Link to="/category/women" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Women</Link>
+                        <Link to="/category/men" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Men</Link>
+                        <Link to="/category/beauty" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Beauty</Link>
+                        <Link to="/category/accessories" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Accessories</Link>
+                        <Link to="/contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+                        <Link to="/sale" className="nav-link sale-link" onClick={() => setMobileMenuOpen(false)}>Sale</Link>
                     </nav>
 
                     <div className="nav-icons">
