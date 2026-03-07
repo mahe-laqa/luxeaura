@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import AdminPage from './pages/AdminPage';
 import FavoritesPage from './pages/FavoritesPage';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './context/CartContext';
 import { ProductProvider } from './context/ProductContext';
 import { FavoritesProvider } from './context/FavoritesContext';
@@ -19,6 +20,7 @@ function App() {
       <CartProvider>
         <ProductProvider>
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/" element={<Layout />}>

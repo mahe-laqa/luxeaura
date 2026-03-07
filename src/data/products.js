@@ -26,9 +26,9 @@ export const products = [
         price: 380,
         category: 'women',
         subcategory: 'outerwear',
-        image: '/social_cardigan.png',
+        image: '/premium_linen_blazer.png',
         images: [
-            '/social_cardigan.png',
+            '/premium_linen_blazer.png',
             'https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=1974&auto=format&fit=crop',
             'https://images.unsplash.com/photo-1603529328514-6334f590fc53?q=80&w=1964&auto=format&fit=crop'
         ],
@@ -99,7 +99,7 @@ export const products = [
         price: 245,
         category: 'women',
         subcategory: 'bottoms',
-        image: '/floral_maxi_dress.jpg',
+        image: '/premium_tailored_maxi_skirt.png',
         description: 'A sophisticated maxi-length skirt featuring a streamlined silhouette and subtle side slits for movement.',
         longDescription: 'Cutting a striking, elongating profile, this tailored maxi skirt is a minimalist dream. The clean waistband and invisible side zip secure a smooth fit, while the ethically sourced virgin wool fabric offers a flawless drape throughout the entire length.\n\nComposition: 98% Virgin Wool, 2% Elastane.\n\nModel Info: Model is 5\'11" and wears size S.',
         isFeatured: false,
