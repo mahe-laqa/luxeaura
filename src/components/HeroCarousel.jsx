@@ -54,6 +54,7 @@ const HeroCarousel = () => {
                                 src={slide.image}
                                 alt={slide.title}
                                 className="hero-bg-image"
+                                style={slide.id === 3 ? { objectPosition: 'center top' } : {}}
                             />
                             <div className="hero-overlay"></div>
                             <div className="hero-content container">
