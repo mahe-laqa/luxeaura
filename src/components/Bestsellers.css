@@ -33,7 +33,7 @@
 .bs-content {
     position: relative;
     z-index: 2;
-    color: var(--color-white);
+    color: var(--color-secondary);
 }
 
 .bs-content h3 {
