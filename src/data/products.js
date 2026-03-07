@@ -21,7 +21,7 @@ export const products = [
         isNewArrival: false,
     },
     {
-        id: 2,
+        id: 201,
         name: 'Neutral Turkish Abaya',
         price: 280,
         category: 'women',
@@ -93,7 +93,7 @@ export const products = [
         isNewArrival: false,
     },
     {
-        id: 6,
+        id: 206,
         name: 'Sophisticated Layered Abaya',
         price: 245,
         category: 'women',
