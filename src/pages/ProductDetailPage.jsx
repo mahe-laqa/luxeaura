@@ -27,11 +27,7 @@ const ProductDetailPage = () => {
             ...databaseProduct,
             description: databaseProduct.description || 'Crafted from a luxurious fabric, this piece features a timeless silhouette that drapes beautifully. The subtle sheen of the material adds an element of glamour, while the relaxed fit ensures day-long comfort. Complete with refined detailing and expert construction.',
             images: databaseProduct.image ? [databaseProduct.image] : [],
-            colors: databaseProduct.colors || [
-                { id: 'black', name: 'Midnight Black', hex: '#111111' },
-                { id: 'champagne', name: 'Champagne', hex: '#E5D6C5' },
-                { id: 'emerald', name: 'Emerald', hex: '#0B4738' }
-            ],
+
             sizes: databaseProduct.sizes || (['accessories', 'beauty', 'home'].includes(databaseProduct.category?.toLowerCase()) ? ['OS'] : ['XS', 'S', 'M', 'L', 'XL']),
             rating: databaseProduct.rating || 4.8,
             reviews: databaseProduct.reviews || (124 + ((parseInt(id, 10) || 100) % 50))
@@ -129,23 +125,7 @@ const ProductDetailPage = () => {
 
                         {/* Options */}
                         <div className="product-options">
-                            <div className="option-group">
-                                <div className="option-header">
-                                    <span className="option-label">Color:</span>
-                                    <span className="option-value">{product.colors.find(c => c.id === selectedColor)?.name}</span>
-                                </div>
-                                <div className="color-selector">
-                                    {product.colors.map(color => (
-                                        <button
-                                            key={color.id}
-                                            className={`color-btn ${selectedColor === color.id ? 'active' : ''}`}
-                                            style={{ backgroundColor: color.hex }}
-                                            onClick={() => setSelectedColor(color.id)}
-                                            title={color.name}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
+
 
                             <div className="option-group">
                                 <div className="option-header">
