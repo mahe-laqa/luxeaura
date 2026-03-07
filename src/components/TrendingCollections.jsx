@@ -9,7 +9,7 @@ const collectionsData = [
         id: 1,
         title: "Autumn Essentials",
         category: "New",
-        image: "/social_cardigan.png",
+        image: "/turkish_abaya_neutral.png",
         description: "Embrace the changing season with our curated selection of warm tones and comfortable layers.",
         link: "/shop?category=Women"
     },
@@ -17,7 +17,7 @@ const collectionsData = [
         id: 2,
         title: "The Silk Edit",
         category: "Premium",
-        image: "/modest_4.png",
+        image: "/turkish_abaya_sophisticated.png",
         description: "Discover the unparalleled luxury and drape of our finest silk garments, designed for elegance.",
         link: "/shop?category=Women"
     },
