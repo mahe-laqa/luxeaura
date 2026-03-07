@@ -26,11 +26,7 @@ const ProductDetailPage = () => {
         return {
             ...databaseProduct,
             description: databaseProduct.description || 'Crafted from a luxurious fabric, this piece features a timeless silhouette that drapes beautifully. The subtle sheen of the material adds an element of glamour, while the relaxed fit ensures day-long comfort. Complete with refined detailing and expert construction.',
-            images: databaseProduct.images || [
-                databaseProduct.image,
-                'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=1974&auto=format&fit=crop', // Substitute angles
-                'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?q=80&w=1972&auto=format&fit=crop'
-            ],
+            images: databaseProduct.images || (databaseProduct.image ? [databaseProduct.image] : []),
             colors: databaseProduct.colors || [
                 { id: 'black', name: 'Midnight Black', hex: '#111111' },
                 { id: 'champagne', name: 'Champagne', hex: '#E5D6C5' },

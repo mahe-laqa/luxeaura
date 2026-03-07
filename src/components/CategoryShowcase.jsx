@@ -25,7 +25,7 @@ const categories = [
     {
         id: 4,
         name: 'Beauty',
-        image: '/modest_4.png',
+        image: '/premium_beauty_banner.png',
         link: '/category/beauty'
     }
 ];

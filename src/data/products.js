@@ -7,9 +7,9 @@ export const products = [
         originalPrice: 350,
         category: 'women',
         subcategory: 'dresses',
-        image: '/modest_4.png',
+        image: '/premium_silk_dress.png',
         images: [
-            '/modest_4.png',
+            '/premium_silk_dress.png',
             'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop',
             'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?q=80&w=1999&auto=format&fit=crop'
         ],
