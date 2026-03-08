@@ -7,8 +7,7 @@ import NewArrivals from '../components/NewArrivals';
 import Lookbook from '../components/Lookbook';
 import Bestsellers from '../components/Bestsellers';
 import FeaturedProducts from '../components/FeaturedProducts';
-import FeaturedCollection from '../components/FeaturedCollection';
-
+import TrendingCollections from '../components/TrendingCollections';
 import Testimonials from '../components/Testimonials';
 import SocialFeed from '../components/SocialFeed';
 import Newsletter from '../components/Newsletter';
@@ -47,7 +46,7 @@ const HomePage = () => {
             <Bestsellers />
             <FeaturedProducts />
 
-            <FeaturedCollection />
+            <TrendingCollections />
             <Testimonials />
 
             {/* Brand Story Section */}
